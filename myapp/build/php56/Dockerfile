@@ -1,5 +1,4 @@
 FROM devilbox/php-fpm:5.6-mods
-MAINTAINER goozp "gzp@goozp.com"
 
 # set timezome
 ENV TZ=Asia/Shanghai
