@@ -64,11 +64,10 @@ docker-machine ssh # 这个命令进入docker环境。
 ~~~
  6. 安装docker-compose  
   进入docker环境
-
-    sudo curl -L https://get.daocloud.io/docker/compose/releases/download/1.22.0/docker-compose-`uname -s`-`uname -m` > /code/docker-compose
-
-    sudo chmod +x  /code/docker-compose
-
+~~~
+sudo curl -L https://get.daocloud.io/docker/compose/releases/download/1.22.0/docker-compose-`uname -s`-`uname -m` > /code/docker-compose
+sudo chmod +x  /code/docker-compose
+~~~
 之所以放这个目录，是因为docker-toolbox好像每次重启虚拟机，都会重置。所以放共享目录最保险。
 
 7. 安装镜像
