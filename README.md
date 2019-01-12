@@ -14,13 +14,16 @@ windows是宿主机，使用docker-toolbox，镜像加速器请自行百度。
 
 镜像加速器修改位置：
 进入docker环境后，
+
     sudo vi /var/lib/boot2docker/profile
 
 然后
-EXTRA_ARGS='
---label provider=virtualbox
---registry-mirror=xxxxx
-'
+
+    EXTRA_ARGS='
+    --label provider=virtualbox
+    --registry-mirror=xxxxx
+    '
+
 上面这个xxxxx替换为实际的镜像加速器地址。然后dos命令重启虚拟机。
 
 大概也是如下操作
@@ -41,6 +44,19 @@ EXTRA_ARGS='
 
 #### 安装文件
 c盘根目录下，
+执行
+
+    git clone https://github.com/xieye114/docker_multiple_php.git
+
+
+
+
+#### 验证
+打开浏览器，分别输入
+http://www.d1.com/index.php
+http://www.d2.com/index.php
+
+应该能看见不同版本的phpinfo。至此环境搭建完毕。
 
 
 
