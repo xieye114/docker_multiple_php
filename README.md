@@ -46,7 +46,19 @@ windows是宿主机，使用docker-toolbox，镜像加速器请自行百度。
 c盘根目录下，
 执行
 
-    git clone https://github.com/xieye114/docker_multiple_php.git
+    git clone https://github.com/xieye114/docker_multiple_php.git code
+
+然后，安装docker-compose
+   在虚拟机里设置目录code，对应windows下的c盘的code目录。
+
+    sudo curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-`uname -s`-`uname -m` -o /code/docker-compose  
+    sudo chmod +x  /code/docker-compose
+
+之所以放这个目录，是因为docker-toolbox好像每次重启虚拟机，都会重置。所以放共享目录最保险。
+
+现在，可以进入docker环境，
+
+    docker-cmopose build
 
 
 
