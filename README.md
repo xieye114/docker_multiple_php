@@ -21,8 +21,14 @@ EXTRA_ARGS='
 --label provider=virtualbox
 --registry-mirror=xxxxx
 '
-上面这个xxxxx替换为实际的镜像加速器地址。
+上面这个xxxxx替换为实际的镜像加速器地址。然后dos命令重启虚拟机。
 
+大概也是如下操作
+
+    docker-machine ssh default 
+    sudo sed -i "s|EXTRA_ARGS='|EXTRA_ARGS='--registry-mirror=加速地址 |g" /var/lib/boot2docker/profile 
+    exit 
+    docker-machine restart default
 
 
 #### 域名映射
