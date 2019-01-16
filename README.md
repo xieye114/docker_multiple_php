@@ -73,7 +73,7 @@ sudo chmod +x  /code/docker-compose
 7. 安装镜像
 ~~~
 cd /code/myapp/build
-docker-cmopose build
+/code/docker-cmopose build
 ~~~
 这个过程会执行很长时间，主要是在php那里。
 
