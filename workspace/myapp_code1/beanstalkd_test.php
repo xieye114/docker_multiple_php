@@ -30,7 +30,7 @@ echo "<h1>下面是从队列取出一条数据，数据是：</h1>";
 
 $job = $beanstalkd->watch( $queue_name )->ignore('default')->reserve();
 $job_data =  $job->getData() ;
-var_dump($job_data);
+var_dump( unserialize( $job_data ));
 
 echo "<br><br>如果看到数据，说明队列服务端和客户端全部安装成功";
 
