@@ -82,5 +82,13 @@ services:
     volumes:
       - ../data/redis:/data
     restart: always
-    
+
+  beanstalkd:
+    build: ./beanstalkd
+    ports:
+      - "11300:11300"
+    volumns:
+      - ../data/beanstalkd:/var/lib/beanstalkd/data:rw
+    restart: always
+
     
