@@ -67,6 +67,7 @@ services:
     volumes:
       - ../data/mysql:/var/lib/mysql:rw
       - ../logs/mysql:/var/lib/mysql-logs:rw
+      - ../backup:/backup:rw
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: myapp
