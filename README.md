@@ -79,7 +79,7 @@ cd /code/myapp/build
 
 8. 启动容器
 ~~~   
-   docker-cmopose up -d
+/code/docker-cmopose up -d
 ~~~
 9. 验证
 打开浏览器，分别输入
