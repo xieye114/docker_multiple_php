@@ -12,12 +12,16 @@ services:
       - ../../workspace:/var/www:rw
       - ../data/centos_composer:/root/.composer:rw
       - ../data/centos_composer_vendor:/root/vendor:rw
+      - ../data/centos_redis:/data/centos_redis:rw
+      - ./centos/centos_file/.bash_history:/root/.bash_history:rw
+      - ./centos/centos_file/start:/bin/start:rw
+      - ./centos/centos_file/crontab:/etc/crontab:rw
       - ./centos/php/php.ini:/opt/remi/php72/root/etc/php.ini:ro
       - ./centos/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
       - ./centos/nginx/conf.d:/etc/nginx/conf.d:ro
-      
     restart: always
     command: "/usr/sbin/init"
+
 
   php56-fpm:
     build: ./php56/

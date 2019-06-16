@@ -1,10 +1,13 @@
 FROM centos:7.4.1708
 
-WORKDIR /var/www
+WORKDIR /root
 
-RUN timedatectl set-timezone Asia/Shanghai \
-  && localectl set-locale LANG=zh_CN.utf8 \
-  && yum install -y wget epel-release \
+RUN curl --silent --location https://rpm.nodesource.com/setup_10.x | bash - \
+  && yum install -y nodejs \
+  && curl -o- -L https://yarnpkg.com/install.sh | bash 
+  
+
+RUN yum install -y wget epel-release \
   && yum install -y http://rpms.remirepo.net/enterprise/remi-release-7.rpm \
   && yum install -y yum-utils \
   && yum-config-manager --enable remi-php72 \
@@ -13,11 +16,6 @@ RUN timedatectl set-timezone Asia/Shanghai \
   && ln -s /usr/bin/php72 /usr/bin/php \
   && sed -i 's/user\ =\ apache/user\ =\ nginx/g' /etc/opt/remi/php72/php-fpm.d/www.conf \
   && sed -i 's/group\ =\ apache/group\ =\ nginx/g' /etc/opt/remi/php72/php-fpm.d/www.conf \
-  && systemctl enable php72-php-fpm \
-  && systemctl enable crond \
-  && systemctl enable redis \
-  && systemctl enable ntpd  \
-  && systemctl start ntpd \
   && curl https://setup.ius.io | sh \
   && yum remove -y git \
   && yum install -y git2u \
