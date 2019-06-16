@@ -10,7 +10,7 @@ services:
       - "8001:8001"
     volumes:
       - ../../workspace:/var/www:rw
-      - ../data/centos_composer:/root/.composer:rw
+      - ../data/centos_composer/cache:/root/.composer/cache:rw
       - ../data/centos_composer_vendor:/root/vendor:rw
       - ../data/centos_redis:/data/centos_redis:rw
       - ./centos/centos_file/.bash_history:/root/.bash_history:rw
