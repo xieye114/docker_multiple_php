@@ -8,6 +8,7 @@ RUN curl --silent --location https://rpm.nodesource.com/setup_10.x | bash - \
   
 
 RUN yum install -y wget epel-release \
+  && wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
   && yum install -y http://rpms.remirepo.net/enterprise/remi-release-7.rpm \
   && yum install -y yum-utils \
   && yum-config-manager --enable remi-php72 \
