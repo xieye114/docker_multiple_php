@@ -98,6 +98,14 @@ http://www.d1.com/redis_db_test.php
 
 另外，d1.com和d2.com，分别访问的是不同的项目。
 
+## 单独使用centos 环境开发php
+
+1. 启动容器
+~~~
+/code/docker-cmopose up -d centos mysql-db
+/code/docker-compose exec centos bash
+~~~
+
 
 
 
