@@ -15,6 +15,7 @@ services:
       - ../data/centos_redis:/data/centos_redis:rw
       - ./centos/centos_file/.bash_history:/root/.bash_history:rw
       - ./centos/centos_file/.bashrc:/root/.bashrc:rw
+      - ./centos/centos_file/ssh:/root/ssh:rw
       - ./centos/centos_file/start:/bin/start:rw
       - ./centos/centos_file/crontab:/etc/crontab:rw
       - ./centos/php/php.ini:/opt/remi/php72/root/etc/php.ini:ro
