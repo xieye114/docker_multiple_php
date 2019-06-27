@@ -25,7 +25,8 @@ RUN yum install -y php72-php-devel  php72-php-fpm  php72-php-mbstring php72-php-
   && sed -i 's/group\ =\ apache/group\ =\ nginx/g' /etc/opt/remi/php72/php-fpm.d/www.conf 
   
   
-RUN curl https://setup.ius.io | sh \
+RUN yum install -y mariadb \
+  && curl https://setup.ius.io | sh \
   && yum remove -y git \
   && yum install -y git2u \
   && git config --global core.autocrlf false \
