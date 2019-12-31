@@ -9,7 +9,7 @@ RUN yum install -y wget yum-utils epel-release \
   && yum install -y https://mirrors.tuna.tsinghua.edu.cn/remi/enterprise/remi-release-7.rpm \
   && yum-config-manager --enable remi-php72 \
   && yum-config-manager --setopt=remi-php72.baseurl=https://mirrors.tuna.tsinghua.edu.cn/remi/enterprise/7/php72/`arch`/ --save \
-  && yum install -y nginx php72 redis zip unzip rsync crontabs vim ntp supervisor
+  && yum install -y nginx php72 redis zip unzip p7zip rsync crontabs vim ntp supervisor
 
 RUN curl --silent --location https://rpm.nodesource.com/setup_10.x | bash - \
   && yum install -y nodejs \
